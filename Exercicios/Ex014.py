@@ -1,5 +1,5 @@
 print('Conversor de temperatura')
-print('')
+print(' ')
 
 celsius = int(input('Informe a temperatura em °C: '))
 fahrenheit = (celsius * 9/5) + 32
