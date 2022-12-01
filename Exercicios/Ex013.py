@@ -1,5 +1,5 @@
 print('Mostra o salario do funcionario')
-print('')
+print(' ')
 
 salario = float(input('Informe seu salario: '))
 s_base = 15/100 * salario
