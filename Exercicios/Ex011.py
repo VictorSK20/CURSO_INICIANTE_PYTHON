@@ -1,5 +1,5 @@
 print('Calculo da quantidade de tinta para uma parede')
-print('')
+print(' ')
 
 altura_prd = float(input('Informe a altura da parede em metros: '))
 largura_prd = float(input('Informe a largura da parede em metros: '))
