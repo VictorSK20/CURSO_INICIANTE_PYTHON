@@ -1,5 +1,5 @@
 print('Mostra a nota do Aluno')
-print(' ')
+print('')
 
 nota1 = float(input('Informe a primeira nota do aluno: '))
 nota2 = float(input('Informe a segunda nota do aluno: '))
