@@ -1,5 +1,5 @@
 print('Programa para ler Distancia em metro, centimetro e minimetros')
-print(' ')
+print('')
 
 metro = int(input('Informe uma medida em Metro e veja sua conversão para outras medidas: '))
 quilometro = metro/1000
