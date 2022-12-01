@@ -1,5 +1,5 @@
 print('Valor de um produto com desconto e parcelado')
-print(' ')
+print('')
 
 produto = float(input('Informe o preço do produto: '))
 desconto = int(input('Informe qual o desconto do produto: '))
