@@ -2,16 +2,25 @@
 # escolhido pela maquina, o programa deve informa se o usuário acertou ou não
 
 from random import randrange
+from time import sleep
 
 n_pc = randrange(5)
 
+print('O computador está escolhendo um número aleatório de 0 até 5\nAguarde um momento...')
+sleep(7)
+print('Pronto o computador já escolheu um número agora é sua vez\n')
+sleep(4)
+
 n_user = int(input('Tente acerta o numero escolhido pelo computador de 0 até 5:\n'))
+
+print('Processando...')
+sleep(5)
 
 if n_user <= 5:
     if n_user == n_pc:
-        print(f'o numero escolhido pelo usuario foi {n_user} e o do computador foi computador {n_pc}, Você venceu !')
+        print(f'O número escolhido pelo usuario foi {n_user}\nO número escolhido pelo computador foi: {n_pc}\nVocê venceu !')
     else:
-        print(f'O numero escolhido pelo usuario foi {n_user} e o escolhido pelo computador {n_pc}, o computador venceu !')
+        print(f'O número escolhido pelo usuario foi {n_user}\nO número escolhido pelo computador foi: {n_pc}\nVocê perdeu !')
 
 else:
-    print('Digite um numero valido entre 0 a 5')
+    print('Digite um número valido entre 0 a 5')
