@@ -1,7 +1,11 @@
 print('Programa para ler Distancia em metro, centimetro e minimetros')
 print('')
 
+
+def metro(quilometro, hectometro):
+
 metro = int(input('Informe uma medida em Metro e veja sua conversão para outras medidas: '))
+
 quilometro = metro/1000
 hectometro = metro/100
 decametro = metro/10
