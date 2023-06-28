@@ -1,4 +1,3 @@
-
 '''print('Valor do real para o dolar')
 print('')
 
@@ -11,17 +10,24 @@ print(f'R${real:.2f} em Euro = €{euro:.2f}')
 
 import requests
 
-# Faz a requisição HTTP à API para obter os dados do dólar
-response = requests.get("https://api.exchangeratesapi.io/latest?base=USD")
 
-# Verifica se a requisição foi bem-sucedida
-if response.status_code == 200:
-    # Obtém o valor do dólar em relação ao real
-    data = response.json()
-    exchange_rate = data["rates"]["BRL"]
+def get_exchange_rate():
+    try:
+        response = requests.get("https://economia.awesomeapi.com.br/USD-BRL")
+        data = response.json()
+        exchange_rate = float(data[0]["bid"])
+        return exchange_rate
+    except Exception as e:
+        print("\033[1;31mErro ao obter o valor do dólar:\033[7;31;40m", e, '\033[0m')
+        return None
 
-    # Exibe o valor atual do dólar
-    print(f"O valor atual do dólar em reais é: {exchange_rate}")
-else:
-    # Exibe uma mensagem de erro caso a requisição falhe
-    print("Falha ao obter o valor do dólar")
+
+def main():
+    exchange_rate = get_exchange_rate()
+    if exchange_rate is not None:
+        exchange_rate_str = "{:.2f}".format(exchange_rate).replace('.', ',')
+        print(f"O valor atual do dólar em reais é: \033[1;33m{exchange_rate_str}\033[1;32mR$\033[0m")
+
+
+if __name__ == "__main__":
+    main()
