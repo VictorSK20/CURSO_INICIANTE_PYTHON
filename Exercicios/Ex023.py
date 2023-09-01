@@ -47,6 +47,9 @@ else:
 
 numero = int(input('Informe um numero: \n '))
 
+# cor
+cor1 = '\033[1;38;5;'
+
 u = numero // 1 % 10
 d = numero // 10 % 10  # resolução na calculadora: Ex 1234 // 10 = 123 - referente ao valor inteiro da div, agora 123 % 10 = 3 referente ao resto da div
 c = numero // 100 % 10

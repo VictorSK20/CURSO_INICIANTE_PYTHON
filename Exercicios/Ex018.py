@@ -14,16 +14,23 @@ print(f'valor do seno: {seno} \nvalor do cosseno: {cosseno} \nvalor da tangente:
 
 import math
 
-pi = 3.1415
-pi_r = 180
-angulo = float(input('Informe um angulo: '))
-angulo = angulo*((2*pi)/360)
+# Laranja
+cor1 = '\033[38;2;255;128;0m'
 
-seno = math.sin((angulo))
-cosseno = math.cos((angulo))
-tangente = math.tan((angulo))
+# Azul escuro
+cor2 = '\033[38;2;0;128;255m'
 
-print('victor',)
-print(f'O angulo de {angulo:.2f} é igual a {seno:.2f}')
-print(f'O angulo de {angulo:.2f} é igual a {cosseno:.2f}')
-print(f'O angulo de {angulo:.2f} é igual a {tangente:.2f}')
+# Remover Cor
+cor0 = '\033[m'
+
+angulo = float(input(f'{cor1}Informe um angulo:\n'))
+
+# Calculo dos angulos
+seno = math.sin(math.radians(angulo))
+cosseno = math.cos(math.radians(angulo))
+tangente = math.tan(math.radians(angulo))
+
+# Imprimindo os resultados
+print(f'{cor2}O angulo de {angulo:.2f} é igual a {seno:.2f}')
+print(f'{cor1}O angulo de {angulo:.2f} é igual a {cosseno:.2f}')
+print(f'{cor2}O angulo de {angulo:.2f} é igual a {tangente:.2f}')

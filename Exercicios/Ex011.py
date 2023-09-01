@@ -7,6 +7,10 @@ largura_prd = float(input('Informe a largura da parede em metros: '))
 area = altura_prd * largura_prd
 tinta = area/2
 
+cor_verde = "\033[1;4;32m"
+reset_verde = "\033[m"
+
+
 print('')
-print(f'Sua parede é \033[1;4;32m{largura_prd}\033[m x \033[1;4;32m{altura_prd}\033[0m e sua area é de \033[1;4;32m{area}m²\033[0m'
-      f'\nA quantidade de tinta necessaria para pinta a parede é de: \033[1;4;32m{tinta:.1f}L\033[m')
+print(f'Sua parede é {cor_verde}{largura_prd}{reset_verde} x {cor_verde}{altura_prd}{reset_verde} e sua area é de {cor_verde}{area}m²{reset_verde}'
+      f'\nA quantidade de tinta necessaria para pinta a parede é de: {cor_verde}{tinta:.1f}L{reset_verde}')
