@@ -3,6 +3,13 @@
 
 from random import randrange
 from time import sleep
+from colorama import init
+
+init(autoreset=True)
+
+win = '\033[1;92m'
+lose = '\033[1;91m'
+default = '\033[m'
 
 n_pc = randrange(5)
 
@@ -18,9 +25,9 @@ sleep(5)
 
 if n_user <= 5:
     if n_user == n_pc:
-        print(f'O número escolhido pelo usuario foi {n_user}\nO número escolhido pelo computador foi: {n_pc}\nVocê venceu !')
+        print(f'O número escolhido pelo usuario foi {win}{n_user}{default}\nO número escolhido pelo computador foi: {lose}{n_pc}\n{win}Você venceu !')
     else:
-        print(f'O número escolhido pelo usuario foi {n_user}\nO número escolhido pelo computador foi: {n_pc}\nVocê perdeu !')
+        print(f'O número escolhido pelo usuario foi {win}{n_user}{default}\nO número escolhido pelo computador foi: {lose}{n_pc}\n{lose}Você perdeu !')
 
 else:
     print('Digite um número valido entre 0 a 5')

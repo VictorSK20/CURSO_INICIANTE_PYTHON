@@ -48,14 +48,29 @@ else:
 numero = int(input('Informe um numero: \n '))
 
 # cor
-cor1 = '\033[1;38;5;'
+cor1 = '\033[1;38;5;40m'
+
+# cor
+cor2 = '\033[1;38;5;226m'
+
+# cor
+cor3 = '\033[1;38;5;26m'
+
+# cor
+cor4 = '\033[1;38;5;1m'
+
+# cor
+cor0 = '\033[m;'
+
+# negrito
+N = '\033[1m'
 
 u = numero // 1 % 10
 d = numero // 10 % 10  # resolução na calculadora: Ex 1234 // 10 = 123 - referente ao valor inteiro da div, agora 123 % 10 = 3 referente ao resto da div
 c = numero // 100 % 10
 m = numero // 1000 % 10
 
-print(f'A unidade = {u}')
-print(f'A dezena  = {d}')
-print(f'A centena = {c}')
-print(f'O milhar  = {m}')
+print(f'{N}A unidade = {cor1}{u}{cor0}')
+print(f'{N}A dezena  = {cor2}{d}{cor0}')
+print(f'{N}A centena = {cor3}{c}{cor0}')
+print(f'{N}O milhar  = {cor4}{m}{cor0}')

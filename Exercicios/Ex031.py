@@ -2,6 +2,7 @@
 # cobrando R$0,50 por Km para viagem de até 200Km e R$0,45 para viagens mais longas
 
 import math
+
 passagem = float(input('Qual será a distância da viagem\n'))
 preco1 = 0.50
 preco2 = 0.45
