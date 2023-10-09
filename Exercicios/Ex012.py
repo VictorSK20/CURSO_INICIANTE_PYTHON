@@ -1,11 +1,19 @@
-print('Valor de um produto com desconto e parcelado')
-print('')
+# Faça um programa que leia o preço de um produto e mostre seu valor final com desconto de 5%
+# o produto deve ter 3% de juros se for parcelado
 
-produto = float(input('Informe o preço do produto: '))
-desconto = int(input('Informe qual o desconto do produto: '))
+# Informando o valor de um produto
+produto = float(input('Informe o preço do produto \nR$'))
+# esconto = int(input('Informe qual o desconto do produto: '))
 
-avista = produto - (desconto/100 * produto)
-parcelado = produto + (3/100 * produto)
-print('O produto com o valor de R${:.2f} com {}% de desconto fica = R${:.2f} \nValor do descontado = {:.2f}R$'.format(produto, desconto, avista, desconto/100 * produto))
-print(f'O produto no valor de R${produto:.2f} se for parcelado, terá um juros de 3% e tera o valor de {parcelado:.2f}R$')
-print(f'Valor do juros: {3/100 * produto:.2f}')
+# armazenando nas variaveis "desconto" e "avista" o valor do produto com a porcetagem
+avista = produto - (5 / 100 * produto)
+parcelado = produto + (3 / 100 * produto)
+
+green_code = '\033[92m'
+reset_code = '\033[0m'
+
+print(f'\nO produto no valor de R${produto:.2f} com 5% de desconto vai custar {green_code}R${avista:.2f}{reset_code} '
+      f'\nValor do desconto {green_code}R${5 / 100 * produto:.2f}{reset_code}')
+
+print(f'\nO produto no valor de R${produto:.2f} se for parcelado, terá um juros de 3% e vai custar {green_code}R${parcelado:.2f}{reset_code}')
+print(f'Valor do juros: {green_code}R${3 / 100 * produto:.2f}{reset_code}')

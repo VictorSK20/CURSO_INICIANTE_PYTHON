@@ -1,9 +1,6 @@
 print('Programa para ler Distancia em metro, centimetro e minimetros')
 print('')
 
-
-def metro(quilometro, hectometro):
-
 metro = int(input('Informe uma medida em Metro e veja sua conversão para outras medidas: '))
 
 quilometro = metro/1000
@@ -13,4 +10,9 @@ decimetro = metro*10
 centimetro = metro*100
 minimetro = metro*1000
 
-print('{}M em Km = {:.3f}.\n{}M em Hm = {:.2f}.\n{}M em Dam = {}.\n{}M em Dm = {}.\n{}M em Cm = {}.\n{}M em Mm {}'.format(metro, quilometro, metro, hectometro, metro, decametro, metro, decimetro, metro, centimetro, metro, minimetro))
+print(f'\033[1;32m{metro}M\033[0;1m em \033[1;33mKm = {quilometro:,}\033[0m.\n'
+      f'\033[1;32m{metro}M\033[0;1m em \033[1;33mHm = {hectometro:,}\033[0m.\n'
+      f'\033[1;32m{metro}M\033[0;1m em \033[1;33mDam = {decametro:,}\033[0m.\n'
+      f'\033[1;32m{metro}M\033[0;1m em \033[1;33mDm = {decimetro:,}\033[0m.\n'
+      f'\033[1;32m{metro}M\033[0;1m em \033[1;33mCm = {centimetro:,}\033[0m.\n'
+      f'\033[1;32m{metro}M\033[0;1m em \033[1;33mMm {minimetro:,}\033[0m')

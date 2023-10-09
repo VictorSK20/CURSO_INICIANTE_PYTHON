@@ -2,10 +2,23 @@
 # apaga o quadro
 
 import random
-print('Informe os nomes dos alunos')
-alunos = input('Informe o nome primeiro aluno: \n'), \
-         input('Informe o nome do segundo aluno: \n'), \
-         input('Informe o nome do terceiro aluno: \n'), \
-         input('Informe o nome do quarto aluno: \n')
 
-print(f'O aluno sorteado para apaga o quadro é {random.choice(alunos)}')
+# Cor Amarela
+cor1 ='\033[1;93m'
+
+# Cor Verde
+cor2 ='\033[1;92m'
+
+# Cor Vermelha
+cor3 ='\033[1;91m'
+
+# Reseta cor
+cor0 ='\033[m'
+
+print('Informe os nomes dos alunos')
+alunos = input(f'{cor1}Informe o nome primeiro aluno: \n'), \
+         input(f'{cor2}Informe o nome do segundo aluno: \n'), \
+         input(f'{cor1}Informe o nome do terceiro aluno: \n'), \
+         input(f'{cor2}Informe o nome do quarto aluno: \n')
+
+print(f'{cor1}O aluno sorteado para apaga o quadro é {cor3}{random.choice(alunos)}')
