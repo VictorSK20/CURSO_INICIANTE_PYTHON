@@ -1,2 +1,2 @@
-# CURSO_INICIANTE_PYTHON_Mundo1
+# CURSO_INICIANTE_PYTHON
 Curso de Python do Curso em Video
