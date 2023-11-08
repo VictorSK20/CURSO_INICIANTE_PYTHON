@@ -1,4 +1,3 @@
-
 """
 Crie um programa que aprove o emprétismo bancário para a compra de uma casa.
 O programa vai pergunta o VALOR DA CASA, o SALÁRIO do comprador e em QUANTOS ANOS
@@ -7,6 +6,7 @@ ele vai pagar.
 Calcule o valor da prestação mensal, sabendo que ela não pode exceder 30% do salário
 ou então o empréstimo será negado.
 """
+
 print(f'\t\033[1;93mSeja bem Vindo(a) !\033[0m\n'
       f'\033[91mOBS: para o emprestimo ser aceito em nosso sistema, o valor da prestação mensal não pode exceder 30% do seu salário\033[0m')
 ValorCasa = float(input('\tImpréstimo\nInforme o valor da casa: '))

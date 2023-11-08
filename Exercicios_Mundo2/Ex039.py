@@ -13,7 +13,12 @@ dia = int(input('Informe o dia: '))
 mes = int(input('Informe o mês: '))
 ano = int(input('Informe o ano: '))
 
-data_nascimento = datetime.date(year=ano, month=mes, day=dia)
+data_nascimento = datetime.datetime(year=ano, month=mes, day=dia)
 
+hoje = datetime.datetime.now()
 
-# ano_nascimento = int(input('Infome sua data de nascimento'))
+idade = hoje.year - data_nascimento.year
+
+dias_alistamento =
+
+print(f'O jovem tem {idade}, e falta {dias_alistamento} dias para o alistamento militar')
