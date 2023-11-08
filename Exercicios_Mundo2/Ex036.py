@@ -24,3 +24,4 @@ else:
     print(f'\nEmpréstimo de R${ValorCasa:,.2f} foi aceito pelo banco')
     print(f'Valor a ser pago a cada mês durante {AnoPagar} anos será de R${ParcelaAno:,.2f}')
     print(f'30% do salario = {(30 / 100 * salario):,.2f}')
+a
