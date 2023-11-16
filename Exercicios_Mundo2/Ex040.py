@@ -11,9 +11,12 @@ n2 = float(input('Informe a segunda nota do aluno: '))
 
 media = (n1 + n2) / 2
 
-if media <= 5.0:
+
+if media > 0 and media <= 5.0:
     print(f'O aluno foi reprovado com: {media}')
-elif media >= 7.0:
+elif media > 0 and media >= 7.0:
     print(f'O aluno foi aprovado com: {media}')
-else:
+elif media > 5.0 and media < 7.0:
     print(f'O aluno esta em recuperação com: {media}')
+else:
+    print('Digite um valor válido')
