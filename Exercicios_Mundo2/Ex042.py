@@ -5,6 +5,7 @@ ISÓSCELES: Dois lados iguais
 ESCALENO: Todos os lados diferentes
 """
 
+
 # Função para adiciona cores ao codigo
 def color(cor):
     if r1:
@@ -24,7 +25,11 @@ try:
     r3 = int(input(f'Informe o tamanho da reta C: '))
 
     if r1 == r2 and r1 == r3 and r2 == r3:
-
+        print('\nO Triângulo é do tipo Equilátero\nTodos os lados são iguais')
+    elif (r1 == r2 and r1 != r3) or (r1 == r3 and r1 != r2) or (r2 == r3 != r1):
+        print('\nO triângulo é do tipo Isóceles\nPossui dois lados iguais')
+    elif r1 != r2 and r2 != r3 and r1 != r3:
+        print('\nO triângulo é do tipo Escaleno\nNão possui nenhum lado igual')
 
     # Calculo para ser verdadeiro as condições de 3 retas formarem um triângulo
     if r1 > 0 and r2 > 0 and r3 > 0:
