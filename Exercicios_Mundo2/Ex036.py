@@ -19,8 +19,9 @@ ParcelaAno = ValorCasa / (AnoPagar*12)
 if ParcelaAno > (30 / 100 * salario):
     print(f'\nEmpréstimo negado, pois o emprestimo no valor de R${ValorCasa:,.2f} '
           f'excede 30% do salário de R${salario:,.2f} a ser pago a cada mês')
-    print(f'30% do salario = {(30 / 100 * salario):,.2f}')
+    print(f'30% do salario = {(salario * 30 / 100 ):,.2f}')
     print(f'Prestação Mensal = {ParcelaAno:.2f}')
+
 else:
     print(f'\nEmpréstimo de R${ValorCasa:,.2f} foi aceito pelo banco')
     print(f'Valor a ser pago a cada mês durante {AnoPagar} anos será de R${ParcelaAno:,.2f}')
