@@ -1,9 +1,9 @@
 # Crie um programa que faça o computador jogar JOKENPÔ com você
 
-import random
-import emoji
+from random import choice
+from emoji import emojize
 
-
+# função de cores
 def cor(color, texto):
     if color == 'ganhar':
         return f'\033[1;38;5;46m{texto}\033[m'  # Verde
@@ -36,47 +36,47 @@ def cor(color, texto):
 try:
     print(cor('principal', f"{' j O K E N P Ô ':=^60}\n"))
 
-    print(emoji.emojize(cor('titulo', 'ESCOLHAR: :raised_fist: ----- :hand_with_fingers_splayed: ----- :victory_hand:\n')))
+    print(emojize(cor('titulo', 'ESCOLHAR: :raised_fist: ----- :hand_with_fingers_splayed: ----- :victory_hand:\n')))
 
-    print(emoji.emojize(cor('pedra', '[1] = PEDRA: [:raised_fist:]\n')))  # raised_fist = Pedra
+    print(emojize(cor('pedra', '[1] = PEDRA: [:raised_fist:]\n')))  # raised_fist = Pedra
 
-    print(emoji.emojize(cor('papel', '[2] = PAPEL: [:hand_with_fingers_splayed:]\n')))  # hand_with_fingers_splayed = Papel
+    print(emojize(cor('papel', '[2] = PAPEL: [:hand_with_fingers_splayed:]\n')))  # hand_with_fingers_splayed = Papel
 
-    print(emoji.emojize(cor('tesoura', '[3] = TESOURA: [:victory_hand:]\n')))  # victory_hand = Tesoura
+    print(emojize(cor('tesoura', '[3] = TESOURA: [:victory_hand:]\n')))  # victory_hand = Tesoura
 
     # Escolha do jogador
     jokenpo = int(input(cor('escolhar', 'Faça sua escolha:\n' + cor('escolhar1', '* 1 para: Pedra\n') + cor('escolhar2', '* 2 para: Papel\n') + cor('escolhar3', '* 3 para: Tesoura\n'))))
 
     # randomizando a escolha de pedra, papel, tesoura para o computador
     escolhas_computador = (':raised_fist:', ':hand_with_fingers_splayed:', ':victory_hand:')
-    computador = random.choice(escolhas_computador)
+    computador = choice(escolhas_computador)
 
     if jokenpo == 1:
-        print(emoji.emojize(':raised_fist:'))
+        print(emojize(':raised_fist:'))
         if computador == ':raised_fist:':
-            print(cor('empate', f'{emoji.emojize(computador)}\nEMPATE !'))
+            print(cor('empate', f'{emojize(computador)}\nEMPATE !'))
         elif computador == ':hand_with_fingers_splayed:':
-            print(cor('perder', f'{emoji.emojize(computador)}\nVOCÊ PERDEU !'))
+            print(cor('perder', f'{emojize(computador)}\nVOCÊ PERDEU !'))
         elif computador == ':victory_hand:':
-            print(cor('ganhar', f'{emoji.emojize(computador)}\nVOCÊ GANHOU !'))
+            print(cor('ganhar', f'{emojize(computador)}\nVOCÊ GANHOU !'))
 
     elif jokenpo == 2:
-        print(emoji.emojize(':hand_with_fingers_splayed:'))
+        print(emojize(':hand_with_fingers_splayed:'))
         if computador == ':raised_fist:':
-            print(cor('ganhar', f'{emoji.emojize(computador)}\nVOCÊ GANHOU !'))
+            print(cor('ganhar', f'{emojize(computador)}\nVOCÊ GANHOU !'))
         elif computador == ':hand_with_fingers_splayed:':
-            print(cor('empate', f'{emoji.emojize(computador)}\nEMPATE !'))
+            print(cor('empate', f'{emojize(computador)}\nEMPATE !'))
         elif computador == ':victory_hand:':
-            print(cor('perder', f'{emoji.emojize(computador)}\nVOCÊ PERDEU !'))
+            print(cor('perder', f'{emojize(computador)}\nVOCÊ PERDEU !'))
 
     elif jokenpo == 3:
-        print(emoji.emojize(':victory_hand:'))
+        print(emojize(':victory_hand:'))
         if computador == ':raised_fist:':
-            print(cor('perder', f'{emoji.emojize(computador)}\nVOCÊ PERDEU !'))
+            print(cor('perder', f'{emojize(computador)}\nVOCÊ PERDEU !'))
         elif computador == ':hand_with_fingers_splayed:':
-            print(cor('ganhar', f'{emoji.emojize(computador)}\nVOCÊ GANHOU !'))
+            print(cor('ganhar', f'{emojize(computador)}\nVOCÊ GANHOU !'))
         elif computador == ':victory_hand:':
-            print(cor('empate', f'{emoji.emojize(computador)}\nEMPATE !'))
+            print(cor('empate', f'{emojize(computador)}\nEMPATE !'))
 
     else:
         print('É permitido somente os números 1, 2 e 3.')
