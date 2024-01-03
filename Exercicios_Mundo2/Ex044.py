@@ -1,86 +1,64 @@
-# Elabore um programa que calcule o valor a ser pago por um produto, considerando o seu PREÇO NORMAL e CONDIÇÕES DE PAGAMENTO:
-"""
-À vista Dinheiro Cheque: 10% de desconto
-À vista no Cartão: 5% de desconto
-Em até 2x no cartão: preço normal
-3% ou mais no cartão: 20% de juros
-"""
-
-# importando biblioteca de cores
-from colorama import init
-
-init(autoreset=True)
+# Elabore um programa que calcule o valor a ser pago por um produto
+# Considerando o seu PREÇO NORMAL e CONDIÇÕES DE PAGAMENTO:
 
 
-# função para adiciona cores
-def cor(texto, tipo):
-    if tipo == 'produto':
-        return f'\033[1;32mR${texto:.2f}\033[m'  # Verde
-    elif tipo == 'parcelas':
-        return f'\033[1;33m{texto}x\033[m'  # Amarelo
-    elif tipo == 'juros':
-        return f'\033[1;34mR${texto:.2f}\033[m'  # Azul
-    elif tipo == 'desconto':
-        return f'\033[1;35mR${texto:.2f}\033[m'  # Roxo
-    elif tipo == 'erro':
-        return f'\033[1;31m{texto}\033[m'  # Vermelho
+from colorama import init  # Utilizando a biblioteca colorama para cores
 
+init(autoreset=True)  # Comando para resetar a cor para o padrão a cada linha
 
-# tratativa de erro
-try:
-    produto = float(input('Informe o valor do produto: '))
+# Função para as cores
+def color(cor, texto):
+    if cor == 'titulo':
+        return f'\033[1;38;5;15m{texto}'
+    if cor == 'tabela':
+        return f'\033[1;38;5;46m{texto}'
+    if cor == 'f_pag':
+        return f'\033[1;38;5;11m{texto}'
+    if cor == 'dinheiro':
+        return f'\033[1;32m{texto}'
 
-    # Seleção de formas de pagamentos
-    print('''Formas de pagamentos disponiveis: 
-    \t1 = À vista no dinheiro Cheque: 10% de desconto
-    \t2 = À vista no cartão: 5% de desconto
-    \t3 = Até 2x no cartão: valor normal
-    \t4 = 3x ou mais no cartão: 20% juros
-          ''')
+print(color('titulo', f'{" BEM VINDO AO SISTEMA DE PAGAMENTO DA LOJA ":*^100}\n'))
 
-    # escolhendo forma de pagamento (Dinheiro ou Cartão) - se for em Dinheiro, compras à vista com 10% de desconto, se for no cartão compras à vista, ou com juros para parcelas de 3x ou mais
-    forma_pagamento = int(input('escolhar a forma de pagamento\n1: para Dinheiro Cheque\n2: para Cartão\n\t'))
+print(color('tabela', f'''{"":=^50}
+\t TABELA DE VALORES COM DESCONTOS E JUROS
+\t---------------------------------------
+\t À VISTA NO DINHEIRO CHEQUE: 10% DE DESCONTO
+\t---------------------------------------
+\t À VISTA NO CARTÃO: 5% DE DESCONTO
+\t---------------------------------------
+\t EM ATÉ 2x NO CARTÃO: PREÇO NORMAL
+\t---------------------------------------
+\t 3x OU MAIS NO CARTÃO: 20% DE JUROS
+\t---------------------------------------
+{"":=^50}
+'''))
 
-    if forma_pagamento == 1:
-        desconto = produto * 10 / 100
-        print(f'''Forma de pagamento escolhida: À vista no dinheiro cheque
-        Valor do produto: {cor(produto, 'produto')} 
-        Número de parcelas: À Vista
-        Juros: Sem Juros
-        10% de Desconto: {cor(desconto, 'desconto')}
-        Total: {cor(produto - ((produto * 10) / 100), 'produto')}''')
+print(color('f_pag', 'Escolhar a forma de pagamento'))
 
-    elif forma_pagamento == 2:
-        parcelas = int(input('Informa a quantidade de parcelas\n\t'))
+forma_pagamento = int(input(color('f_pag', '''
+[1] Dinheiro
+[2] Cartão 
+Informe o número >>> ''')))
 
-        if parcelas == 1:
-            print(f'''Forma de pagamento escolhida foi: À vista no cartão
-Valor do produto: {cor(produto, 'produto')}
-Numero de parcelas: A VISTA
-SEM JUROS ''')
+if forma_pagamento == 1:
+    (print(f'\nForma de pagamento escolhida: {color("dinheiro","Dinheiro")}'))
+    produto = float(input('Informe o valor do produto R$'))
+    desconto = (produto - (10 * produto / 100))
+    print(f'O produto no valor de R${produto:.2f} com 10% de desconto sairá no valor de R${desconto:.2f}')
 
-        elif parcelas == 2:
-            juros = (produto * 5) / 100
-            valor_parcelas = (produto + juros) / parcelas
-            print(f'''Forma de pagamento escolhida foi: de {cor(parcelas, 'parcelas')} no cartão
-Valor do produto: {cor(produto, 'produto')}
-Numeros de parcelas: {cor(parcelas, 'parcelas')}
-5% de Juros: {cor(juros, 'juros')}
-valor das parcelas com juros: {cor(valor_parcelas, 'juros')}
-total: {cor(produto + juros, 'produto')}''')
+elif forma_pagamento == 2:
+    print(f'\nForma de pagamento escolhida: {color("dinheiro", "Cartão")}')
+    produto = float(input('Informe o valor do produto R$'))
+    parcelas = int(input('De quantas vezes deseja parcela o produto x'))
 
-        elif parcelas >= 3:
-            juros = (produto * 20) / 100
-            valor_parcelas = (produto + juros) / parcelas
-            print(f'''Forma de pagamento escolhida foi: de {cor(parcelas, 'parcelas')} no cartão
-Valor do produto: {cor(produto, 'produto')}
-Numeros de parcelas: {cor(parcelas, 'parcelas')}
-20% de Juros:  {cor(juros, 'juros')}
-Valor das parcelas com juros: {cor(valor_parcelas, 'juros')}
-total: {cor(produto + juros, 'produto')}.''')
+    if parcelas == 0 or parcelas == 1:
+        desconto = (produto - (5 * produto / 100))
+        print(f'O produto no valor de R${produto:.2f} com 5% de desconto sairá no valor de R${desconto:.2f}')
 
-    else:
-        print(cor('Favor escolher apenas 1 ou 2 para as formas de pagamento dísponivel ', 'erro'))
+    elif parcelas == 2:
+        print(f'Valor do produto R${produto:.2f} será pago com duas parcelas de R${produto / parcelas:.2f}')
 
-except ValueError:
-    print(cor('Valor invalido !', 'erro'))
+    elif parcelas >= 3:
+        juros = (produto + (20 * produto / 100))
+        print(f'O produto no valor de R${produto:.2f} parcelado em x{parcelas} ficará com 20% de juros')
+        print(f'Valor de cada parcela R${juros / parcelas:.2f}')
