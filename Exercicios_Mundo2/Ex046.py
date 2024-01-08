@@ -4,7 +4,7 @@
 from time import sleep
 from emoji import emojize
 
-for contagem in range(10 , 0-1, -1):
-    sleep(1)
+for contagem in range(10, 0-1, -1):  # Criando range de 10 até 0
+    sleep(1)  # A cada numero do range contagem for exibido, o programa ira aguarda 1 segundo para exibir o próximo número
     print(contagem)
 print(emojize(':collision::anger_symbol::collision::anger_symbol::collision::anger_symbol::collision::anger_symbol::collision::anger_symbol::collision::anger_symbol::collision::anger_symbol::collision::anger_symbol:'))
