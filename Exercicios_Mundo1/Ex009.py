@@ -1,16 +1,19 @@
+
 print('Tabuada')
 
-n = int(input('Informe qual Valor deseja ver a tabuada: '))
+n = int(input('Informe o Número da tabuada: '))
+
 print('-' * 18)
-print('\033[36m0\033[0m  x \033[36m',n, '\033[0m = \033[34m{:2}\033[0m'.format(n*0))
-print('\033[36m1\033[0m  x \033[36m',n, '\033[0m = \033[34m{:2}\033[0m'.format(n*1))
-print('\033[36m2\033[0m  x \033[36m',n, '\033[0m = \033[34m{:2}\033[0m'.format(n*2))
-print('\033[36m3\033[0m  x \033[36m',n, '\033[0m = \033[34m{:2}\033[0m'.format(n*3))
-print('\033[36m4\033[0m  x \033[36m',n, '\033[0m = \033[34m{:2}\033[0m'.format(n*4))
-print('\033[36m5\033[0m  x \033[36m',n, '\033[0m = \033[34m{:2}\033[0m'.format(n*5))
-print('\033[36m6\033[0m  x \033[36m',n, '\033[0m = \033[34m{:2}\033[0m'.format(n*6))
-print('\033[36m7\033[0m  x \033[36m',n, '\033[0m = \033[34m{:2}\033[0m'.format(n*7))
-print('\033[36m8\033[0m  x \033[36m',n, '\033[0m = \033[34m{:2}\033[0m'.format(n*8))
-print('\033[36m9\033[0m  x \033[36m',n, '\033[0m = \033[34m{:2}\033[0m'.format(n*9))
-print('\033[36m10\033[0m x \033[36m',n, '\033[0m = \033[34m{:2}\033[0m'.format(n*10))
-print('-' * 18) 
+
+print(f'{1:2} x {n:2} = {(n * 1)}')
+print(f'{2:2} x {n:2} = {(n * 2)}')
+print(f'{3:2} x {n:2} = {(n * 3)}')
+print(f'{4:2} x {n:2} = {(n * 4)}')
+print(f'{5:2} x {n:2} = {(n * 5)}')
+print(f'{6:2} x {n:2} = {(n * 6)}')
+print(f'{7:2} x {n:2} = {(n * 7)}')
+print(f'{8:2} x {n:2} = {(n * 8)}')
+print(f'{9:2} x {n:2} = {(n * 9)}')
+print(f'{10:2} x {n:2} = {(n * 10)}')
+
+print('-' * 18)
