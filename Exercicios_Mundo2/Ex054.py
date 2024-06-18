@@ -16,3 +16,4 @@ for a in range(1, 7+1):
 
 for usuario, data in datas_de_nascimento.items():
     print(f'O usuário {usuario} nasceu em: {data.strftime("%d/%m/%Y")}')
+
