@@ -1,0 +1,1 @@
+# Escreva um programa que leia um Número N inteiro qualquer e mostre na tela os N primeiros el
