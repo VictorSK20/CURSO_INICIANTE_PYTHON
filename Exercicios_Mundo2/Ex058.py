@@ -30,7 +30,12 @@ while True:
                 sleep(1)
                 print('.', end='')
                 sleep(1)
-            print(f'O computador não pensou no número {n_user}\n\t{lose}Tente Novamente !!!')
+
+            if n_user < n_pc:
+                print(f'\n\t{lose}Mais...Tente Novamente !!!')
+            elif n_user > n_pc:
+                print(f'\n\t{lose}Menos...Tente Novamente !!!')
+
             n_user = int(input('Escolhar um número entre 0 e 10: '))
             n_tentativa += 1
 

@@ -1,17 +1,27 @@
 # Melhore o Desafio 061, perguntando para o usúario se ele quer mostrar mais alguns termos. O programa encerra quando
 # ele disser que quer mostrar 0 Termos
 
-termo = 1
+termo = int(input('Informe quantos termos deseja vizualizar: '))
 
-while termo != 0:
-    termo = int(input('Informe quantos termos quer mostrar\nUse o dígito 0 para finalizar\n'))
-    if termo == 0:
-        print('Finalizando Operação')
-        break
+if termo < 1:
+    print('Fim da operação')
 
-    a1 = int(input('Informe o primero termo: '))
+elif termo > 0:
+    a1 = int(input('Informe o primeiro termo: '))
+
     r = int(input('Informe a razão: '))
-    n = termo
 
-    for i in range(1, n + 1):
-        print(f'{i:2}º Termo - {(a1 + (i - 1) * r):2}')
+    for i in range(1, termo + 1):
+        print(f'{i:2}º Termo = {(a1 + (i - 1) * r):2}')
+
+    continuar_termos = termo
+    while continuar_termos != 0:
+        continuar_termos = int(input('Quantos termos à mais desejar ver?\nDigite 0 para encerar o processo: '))
+
+        for j in range(i, continuar_termos + i):
+            print(f'{j:2}º termo =  {(a1 + j * r):2}')
+
+        # atualizando o valor de i para o próximo laço
+        i += continuar_termos
+
+print('Fim da operação')

@@ -29,7 +29,7 @@ elif n1 == n2:
     maior = 'Valores digitado são iguais'
 
 while escolhar != 5:
-    print('\nEscolha um dos números abaixo para executa o comando escolhido.'
+    print('\nEscolha um dos números abaixo para executar o comando escolhido.'
           '\n\t[1] Somar\n\t[2] Multiplicar\n\t[3] Maior\n\t[4] Novos Números\n\t[5] Sair do Programa')
 
     escolhar = int(input('\t\033[1m→  '))

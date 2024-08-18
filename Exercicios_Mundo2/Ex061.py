@@ -1,5 +1,5 @@
 # Refaça o Desafio 051, lendo o Primeiro Termo e a Razão de uma PA, mostrando os 10 Primeiros Termos da progressão
-# Usando a estrutura While
+# Usando a estrutura Whilef
 
 a1 = int(input('Informe o primeiro termo: '))
 
