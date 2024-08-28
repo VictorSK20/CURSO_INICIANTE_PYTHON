@@ -2,26 +2,22 @@
 # ele disser que quer mostrar 0 Termos
 
 termo = int(input('Informe quantos termos deseja vizualizar: '))
+a1 = int(input('Informe o primeiro termo: '))
 
-if termo < 1:
-    print('Fim da operação')
+r = int(input('Informe a razão: '))
 
-elif termo > 0:
-    a1 = int(input('Informe o primeiro termo: '))
+for i in range(1, termo + 1):
+    print(f'{i:2}º Termo = {(a1 + (i - 1) * r):2}')
 
-    r = int(input('Informe a razão: '))
+continuar_termos = termo
 
-    for i in range(1, termo + 1):
-        print(f'{i:2}º Termo = {(a1 + (i - 1) * r):2}')
+while continuar_termos != 0:
+    continuar_termos = int(input('Quantos termos à mais desejar ver?\nDigite 0 para encerar o processo: '))
 
-    continuar_termos = termo
-    while continuar_termos != 0:
-        continuar_termos = int(input('Quantos termos à mais desejar ver?\nDigite 0 para encerar o processo: '))
+    for j in range(i, continuar_termos + i):
+        print(f'{1 + j:2}º termo =  {(a1 + j * r):2}')
 
-        for j in range(i, continuar_termos + i):
-            print(f'{j:2}º termo =  {(a1 + j * r):2}')
-
-        # atualizando o valor de i para o próximo laço
-        i += continuar_termos
+    # atualizando o valor de i para o próximo laço
+    i += continuar_termos
 
 print('Fim da operação')
