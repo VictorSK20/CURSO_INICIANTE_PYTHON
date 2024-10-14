@@ -4,8 +4,6 @@ A) Quantos vezes apareceu o valor 9
 B) Em que posição foi digitado o primeiro valor 3
 C) Quais foram os números pares
 """
-valornove = postres = valorespares = pares = 0
-par = ()
 
 n1 = int(input('Digite um número: '))
 n2 = int(input('Digite outro número: '))
@@ -26,9 +24,13 @@ else:
     print(f'O valor 3 não apareceu em nenhuma posição')
 
 # Questão C
+pares_encontrados = False
+
+print('Os valores pares digitado foram: ', end='')
 for pares in valores:
     if pares % 2 == 0:
-        print('Valores Pares', end=' ')
-        print(f'{pares}')
+        print(pares, end=' ')
+        pares_encontrados = True
 
-
+if not pares_encontrados:
+    print('Nenhum valor par foi encontrado')
