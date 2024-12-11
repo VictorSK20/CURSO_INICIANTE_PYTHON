@@ -1,21 +1,15 @@
 # Crie um programa que declare uma matriz de dimensão 3×3 e preencha com valores lidos pelo teclado.
 # No final, mostre a matriz na tela, com a formatação correta.
-'''
-matriz = [[], []]
-c = 0
 
-for l in range(3):
-    linha = int(input(f'Informe a posição [{l}][{c}] '))
-    matriz[0].append(linha)
-    for c in range(3):
-        coluna = int(input(f'Informe a posição [{l}][{c}] '))
-        matriz[1].append(coluna)
+matriz = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]  # Matriz inicial 3x3 preenchida com zeros
 
-print(matriz)
-'''
+# adicionado os valores a matriz 3x3
+for linha in range(3):
+    for coluna in range(3):
+        matriz[linha][coluna] = int(input(f'valor[{linha}][{coluna}] '))
 
-matriz = []
-
-
-print(f'{matriz}')
-
+# organizando a impressão da matriz 3x3
+for linha in range(3):
+    for coluna in range(3):
+        print(f'[{matriz[linha][coluna]:^5}]', end=' ')
+    print('')
